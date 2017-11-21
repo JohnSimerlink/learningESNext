@@ -1,0 +1,29 @@
+{
+  "name": "esnextlearning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cross-env": "^5.1.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2"
+  },
+  "scripts": {
+    "dev": "./node_modules/.bin/cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnSimerlink/learningESNext.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnSimerlink/learningESNext/issues"
+  },
+  "homepage": "https://github.com/JohnSimerlink/learningESNext#readme"
+}
