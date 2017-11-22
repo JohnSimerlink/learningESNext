@@ -1,4 +1,5 @@
 //https://github.com/tc39/proposal-class-fields
+import Car from './car.ts'
 class Counter extends HTMLElement {
   x = 0
   clicked() {
@@ -19,4 +20,11 @@ class Counter extends HTMLElement {
     this.innerHTML = this.x.toString()
   }
 }
+const car = new Car()
+car.drive()
+//car.drive = () => console.log('hi')
+// car.drive()
+// car.x = 'yo'
+var sum = car.sum(3,4)
+console.log('sum is', sum)
 window.customElements.define('num-counter', Counter)
