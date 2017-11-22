@@ -1,6 +1,6 @@
-`x1`
 //https://github.com/tc39/proposal-class-fields
 class Counter extends HTMLElement {
+  x = 0
   clicked() {
     console.log('clicked'
     )
@@ -10,7 +10,6 @@ class Counter extends HTMLElement {
   constructor() {
     super()
     this.onclick = this.clicked.bind(this)
-    this.x = 0
   }
   connectedCallback() {
     this.render()
