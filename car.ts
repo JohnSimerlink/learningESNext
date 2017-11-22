@@ -1,5 +1,11 @@
 import logStuff from './settings'
+
+@logClass
 class Car {
+    id;
+    constructor(){
+      this.id = Math.random()
+    }
     @readonly
     drive() {
       console.log("vroom vroom")
@@ -19,6 +25,7 @@ function log(name) {
     if (typeof original === 'function' && logStuff) {
 
       descriptor.value = function(...args) {
+        console.log(target, typeof target, target instanceof Car)
         console.log(name, decoratedFunctionName)
         console.log("Args: ", ...args)
         const result = original(...args)
@@ -28,6 +35,15 @@ function log(name) {
     }
     return descriptor
   }
+}
+
+function logClass(originalConstructor) {
+  const newConstructor = (...args) => {
+    console.log("Constructor arguments for ", originalConstructor.name, ": ", ...args)
+    return new originalConstructor(...args)
+  }
+  // newConstructor.prototype = originalConstructor.prototype
+  return <any> newConstructor
 }
 
 export default Car

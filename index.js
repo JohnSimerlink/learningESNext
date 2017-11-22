@@ -20,7 +20,7 @@ class Counter extends HTMLElement {
     this.innerHTML = this.x.toString()
   }
 }
-const car = new Car()
+const car = new Car('hello', 'world')
 car.drive()
 //car.drive = () => console.log('hi')
 // car.drive()
